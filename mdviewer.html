@@ -1,24 +1,27 @@
 <!DOCTYPE html>
-<html>
+<htm lang="kr">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Markdown Viewer</title>
   </head>
-  <body id="markdown-contents">
+  <body id="mdid">
+    <div id="markdown-contents" style="display: none"></div>
+
     <script
       type="text/javascript"
       src="resources/jquery/jquery-3.6.0.min.js"
     ></script>
-
     <script
       type="text/javascript"
       src="resources/showdownjs/dist/showdown.min.js"
     ></script>
 
     <script type="text/javascript">
-      var path = "https://fortae84.github.io/markdown/markdown.md";
-      var converter = new showdown.Converter();
-      $("#markdown-contents").html(converter.makeHtml(path));
+      var path = "D:/project/workspace/fortae84.github.io/markdown/markdown";
+      $("#markdown-contents").load(path);
+
+      var sdconv = new showdown.converter();
+      $("#mdid").html(sdconv.makeHtml($("#markdown-contents").html()));
     </script>
   </body>
-</html>
+</htm>

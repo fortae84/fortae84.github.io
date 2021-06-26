@@ -4,13 +4,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Markdown Viewer</title>
   </head>
-  <body>
-    <div id="markdown-contents"></div>
-
+  <body id="markdown-contents">
     <script
       type="text/javascript"
       src="resources/jquery/jquery-3.6.0.min.js"
     ></script>
+
     <script
       type="text/javascript"
       src="resources/showdownjs/dist/showdown.min.js"
@@ -18,15 +17,8 @@
 
     <script type="text/javascript">
       var path = "https://fortae84.github.io/markdown/markdown.md";
-
-      var md2html = function (path) {
-        // Load contents and convert to HTML
-        $("#markdown-contents").load(path, function (text, status) {
-          var sdconv = new showdown.Converter();
-          this.innerHTML = sdconv.makeHtml(text);
-        });
-      };
-      md2html(path);
+      var converter = new showdown.Converter();
+      $("#markdown-contents").html(converter.makeHtml(text));
     </script>
   </body>
 </html>

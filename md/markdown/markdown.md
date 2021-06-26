@@ -36,30 +36,30 @@
 
 ## **Markdown to HTML Javascript 라이브러리**
 
-1. showdown: 28KB. Basically the gold standard; it is the basis for pagedown.
+1. showdown
 
-2. pagedown: 8KB. This is what powers StackExchange, so you can see for yourself which features it supports (it is very robust but missing tables, definition lists, footnotes, etc). In addition to the 8KB converter script, it also offers editor and sanitizer scripts, both of which StackExchange also uses.
+2. pagedown
 
-3. drawdown: 1.3KB. Full disclosure, I wrote it. Broader feature scope than any other lightweight converter; handles most but not all of the CommonMark spec. Not recommended for user editing but very useful for presenting information in web apps. No inline HTML.
+3. drawdown
 
-4. markdown-it: 104KB. Follows the CommonMark spec; supports syntax extensions; produces secure output by default. Fast; may actually be as robust as showdown, but very large. Is the basis for http://dillinger.io/.
+4. markdown-it
 
-5. marked: 19KB. Comprehensive; tested against unit test suite; supports custom lexer rules.
+5. marked
 
-6. micromarkdown: 5KB. Supports a lot of features, but is missing some common ones like unordered lists using \* and some common ones that aren't strictly part of the spec like fenced code blocks. Many bugs, throws exceptions on most longer documents. I consider it experimental.
+6. micromarkdown
 
-7. nano-markdown: 1.9KB. Feature scope limited to things used by most documents; more robust than micromarkdown but not perfect; uses its own very basic unit test. Reasonably robust but breaks on many edge cases.
+7. nano-markdown
 
-8. mmd.js: 800 bytes. The result of an effort to make the smallest possible parser that is still functional. Supports a small subset; document needs to be tailored for it.
+8. mmd.js
 
-9. markdown-js: 54KB (not available for download minified; would probably minify to ~20KB). Looks pretty comprehensive and includes tests, but I'm not very familiar with it.
+9. markdown-js
 
-10. meltdown: 41KB (not available for download minified; would probably minify to ~15KB). jQuery plugin; Markdown Extra (tables, definition lists, footnotes).
+10. meltdown
 
-11. unified.js: varies, 5-100KB. A plugin-based system for converting between html, markdown, and prose. Depending on what plugins you need (spell-checking, syntax-highlightin
+11. unified.js
 
 ## **참조 사이트**
 
 - https://ko.wikipedia.org/wiki/%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4
 - https://code.visualstudio.com/docs/languages/markdown#_compiling-markdown-into-html
-- https://www.markdowntutorial.com/
+- https://www.markdowntutorial.com

@@ -1,9 +1,10 @@
-# **Markdown Virtual Code 작성방법**
+# **Markdown **
 
 ## **목차**
 
 - [Virutal Code 환경 설정](#virutal-code-환경-설정)
 - [Markdown HTML 변환하기](#markdown-html-변환하기)
+- [Markdown to HTML Javascript 라이브러리](#markdown-to-html-javascript-라이브러리)
 - [참조 사이트](#참조-사이트)
 
 ## **Virutal Code 환경 설정**
@@ -33,7 +34,7 @@
 3. 변환 폴더 이동 후 명령어 실행
    - markdown-it "파일명".md -o index.html
 
-## **Javascript Markdown to HTML 라이브러리**
+## **Markdown to HTML Javascript 라이브러리**
 
 1. showdown: 28KB. Basically the gold standard; it is the basis for pagedown.
 

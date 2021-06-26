@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Markdown Viewer</title>
+    <style type="text/css">
+      #markdown-contents {
+        width: 600px;
+        padding: 0 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="markdown-contents"></div>
+
+    <script
+      type="text/javascript"
+      src="resources/jquery/jquery-3.6.0.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="resources/showdownjs/dist/showdown.min.js"
+    ></script>
+
+    <script type="text/javascript">
+      var path =
+        "file:///D:/project/workspace/fortae84.github.io/markdown/markdown.md";
+
+      var md2html = function (path) {
+        // Load contents and convert to HTML
+        $("#markdown-contents").load(path, function (text, status) {
+          var sdconv = new showdown.Converter();
+          this.innerHTML = sdconv.makeHtml(text);
+        });
+      };
+      md2html(path);
+    </script>
+  </body>
+</html>

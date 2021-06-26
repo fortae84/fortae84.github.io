@@ -17,11 +17,12 @@
     ></script>
 
     <script type="text/javascript">
-      var path = "D:/project/workspace/fortae84.github.io/markdown/markdown";
-      $("#markdown-contents").load(path);
-
-      var sdconv = new showdown.converter();
-      $("#mdid").html(sdconv.makeHtml($("#markdown-contents").html()));
+      $(function () {
+        var path = "D:/project/workspace/fortae84.github.io/markdown/markdown";
+        $("#markdown-contents").load(path);
+        var convertor = new showdown.Converter();
+        $("#mdid").html(convertor.makeHtml($("#markdown-contents").html()));
+      });
     </script>
   </body>
 </htm>

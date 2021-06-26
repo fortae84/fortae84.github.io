@@ -18,7 +18,7 @@
 
     <script type="text/javascript">
       $(function () {
-        var path = "D:/project/workspace/fortae84.github.io/markdown/markdown";
+        var path = "https://fortae84.github.io/markdown/markdown.md";
         $("#markdown-contents").load(path);
         var convertor = new showdown.Converter();
         $("#mdid").html(convertor.makeHtml($("#markdown-contents").html()));

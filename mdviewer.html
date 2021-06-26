@@ -6,7 +6,7 @@
   </head>
   <body id="mdid">
     <div id="markdown-contents" style="display: none"></div>
-
+    <div id="mdid"></div>
     <script
       type="text/javascript"
       src="resources/jquery/jquery-3.6.0.min.js"
@@ -19,9 +19,10 @@
     <script type="text/javascript">
       $(function () {
         var path = "https://fortae84.github.io/markdown/markdown.md";
-        $("#markdown-contents").load(path);
-        var convertor = new showdown.Converter();
-        $("#mdid").html(convertor.makeHtml($("#markdown-contents").html()));
+        $("#markdown-contents").load(path, function (data) {
+          var convertor = new showdown.Converter();
+          $("#mdid").html(convertor.makeHtml(data));
+        });
       });
     </script>
   </body>

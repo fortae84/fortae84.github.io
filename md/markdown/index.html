@@ -1,13 +1,95 @@
-<link rel="stylesheet" type="text/css" href="../style.css">
-<h1><strong>Markdown</strong></h1>
+<link rel="stylesheet" type="text/css" href="../style.css" />
+<h1><strong>Markdown (text/markdown)</strong></h1>
 <h2><strong>목차</strong></h2>
 <ul>
+<li><a href="#markdown-%EC%86%8C%EA%B0%9C">Markdown 소개</a></li>
 <li><a href="#virutal-code-%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95">Virutal Code 환경 설정</a></li>
 <li><a href="#markdown-html-%EB%B3%80%ED%99%98%ED%95%98%EA%B8%B0">Markdown HTML 변환하기</a></li>
 <li><a href="#markdown-to-html-javascript-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC">Markdown to HTML Javascript 라이브러리</a></li>
 <li><a href="#%EC%B0%B8%EC%A1%B0-%EC%82%AC%EC%9D%B4%ED%8A%B8">참조 사이트</a></li>
 </ul>
-<h2><strong>Virutal Code 환경 설정</strong></h2>
+<h2><strong>Markdown 소개</strong></h2>
+<ul>
+<li>Markdown은 일반 텍스트 기반의 경량 마크업 언어이며, 문법이 쉽고 HTML, PDF등 서식 문서로 변환이 간단한다.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">장점</th>
+<th style="text-align:center">단점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">단순하고 익히기 쉽다.</td>
+<td style="text-align:center">문법이 너무 단순한다</td>
+</tr>
+<tr>
+<td style="text-align:center">확장성이 좋다</td>
+<td style="text-align:center">표준이 없다.</td>
+</tr>
+</tbody>
+</table>
+<h2>Markdown 문법</h2>
+<table>
+<thead>
+<tr>
+<th>내용</th>
+<th>문법</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목 header</td>
+<td>#/##/### 텍스트</td>
+</tr>
+<tr>
+<td>일반 List</td>
+<td>-/+/* 텍스트</td>
+</tr>
+<tr>
+<td>숫자 List</td>
+<td>숫자. 텍스트</td>
+</tr>
+<tr>
+<td>Italic Text</td>
+<td>*텍스트* _텍스트_</td>
+</tr>
+<tr>
+<td>Bold Text</td>
+<td>**텍스트** __텍스트__</td>
+</tr>
+<tr>
+<td>인용</td>
+<td>&gt; 텍스트</td>
+</tr>
+<tr>
+<td>인라인 링크</td>
+<td>[텍스트](링크주소)</td>
+</tr>
+<tr>
+<td>참조 링크</td>
+<td>[텍스트][참조명] or [참조명]: 링크주소</td>
+</tr>
+<tr>
+<td>이미지</td>
+<td>![텍스트](이미지링크)</td>
+</tr>
+<tr>
+<td>수평선</td>
+<td>--- / *** / ___</td>
+</tr>
+<tr>
+<td>코드</td>
+<td>\` 텍스트 \`</td>
+</tr>
+<tr>
+<td>코드 블럭</td>
+<td>```` 텍스트 ````</td>
+</tr>
+</tbody>
+</table>
+<h2><strong>Markdown Virutal Code 환경 구성</strong></h2>
 <ol>
 <li>
 <p>Virtual Studio Code 다운로드</p>
@@ -28,26 +110,39 @@
 </li>
 </ol>
 <h2><strong>Markdown HTML 변환하기</strong></h2>
+<ul>
+<li>
+<p>방법1. NodeJS markdown-it Package로 변환하기</p>
 <ol>
 <li>
-<p>NodeJS 설치</p>
+<p>Nodejs 다운 및 설치</p>
 <ul>
 <li>https://nodejs.org/ko</li>
 </ul>
 </li>
 <li>
-<p>전역 markdown-it Package 설치</p>
+<p>markdown-it Package 설치</p>
 <ul>
 <li>npm install -g markdown-it</li>
 </ul>
 </li>
 <li>
-<p>변환 폴더 이동 후 명령어 실행</p>
+<p>변환할 .md 파일 폴더 이동 후 명령어 실행</p>
 <ul>
 <li>markdown-it &quot;파일명&quot;.md -o index.html</li>
 </ul>
 </li>
 </ol>
+</li>
+<li>
+<p>방법2. 변환 웹사이트 활용</p>
+<ol>
+<li><a href="https://markdowntohtml.com/">https://markdowntohtml.com</a></li>
+<li><a href="https://www.ttmkt.com/kr/tools/markdown-to-html/">https://www.ttmkt.com/kr/tools/markdown-to-html</a></li>
+<li><a href="https://products.aspose.app/words/ko/conversion/markdown-to-html">https://products.aspose.app/words/ko/conversion/markdown-to-html</a></li>
+</ol>
+</li>
+</ul>
 <h2><strong>Markdown to HTML Javascript 라이브러리</strong></h2>
 <ol>
 <li>
@@ -86,7 +181,15 @@
 </ol>
 <h2><strong>참조 사이트</strong></h2>
 <ul>
-<li>https://ko.wikipedia.org/wiki/%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4</li>
-<li>https://code.visualstudio.com/docs/languages/markdown#_compiling-markdown-into-html</li>
-<li>https://www.markdowntutorial.com</li>
+<li><a href="https://ko.wikipedia.org/wiki/%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4" title="위키">https://ko.wikipedia.org/wiki/%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4</a></li>
+<li><a href="https://code.visualstudio.com/docs/languages/markdown">https://code.visualstudio.com/docs/languages/markdown</a></li>
+<li><a href="https://www.markdowntutorial.com">https://www.markdowntutorial.com</a></li>
 </ul>
+<!--
+<details>
+   <summary>
+      CLICK ME
+   </summary>
+pythonprint("hello world!")
+</details>
+-->

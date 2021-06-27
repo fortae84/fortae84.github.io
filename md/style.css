@@ -7,6 +7,35 @@ ul {
   margin: 5px 0px 10px 0px;
 }
 
+table {
+  display: table;
+  width: 90%;
+  background: #fff;
+  margin: 1em 0;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0.28571429rem;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.87);
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-left: 20px;
+}
+td {
+  padding: 5px;
+  font-size: 13px;
+}
+th {
+  padding: 5px;
+  text-align: center;
+  font-size: 14px;
+  border-bottom: 1px solid #000;
+}
+tr:nth-child(2n + 0) {
+  background-color: #eee;
+}
+
 h1 {
   border-bottom: 1px solid #e3e3e3;
 }

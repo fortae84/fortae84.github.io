@@ -4,11 +4,12 @@
 
 ## **목차**
 
-- [Markdown 소개](#markdown-소개)
-- [Virutal Code 환경 설정](#virutal-code-환경-설정)
-- [Markdown HTML 변환하기](#markdown-html-변환하기)
-- [Markdown to HTML Javascript 라이브러리](#markdown-to-html-javascript-라이브러리)
-- [참조 사이트](#참조-사이트)
+- [Markdown 소개](#)
+- [Markdown 문법](#)
+- [Markdown Virtual Code 환경 구성](#)
+- [Markdown HTML 변환](#)
+- [Markdown to HTML Javascript 라이브러리](#)
+- [참조 사이트](#)
 
 ## **Markdown 소개**
 
@@ -19,15 +20,15 @@
 | 단순하고 익히기 쉽다. | 문법이 너무 단순한다 |
 |     확장성이 좋다     |     표준이 없다.     |
 
-## Markdown 문법
+## **Markdown 문법**
 
 | 내용        | 문법                                         |
 | ----------- | -------------------------------------------- |
 | 제목 header | #/##/### 텍스트                              |
 | 일반 List   | -/+/\* 텍스트                                |
 | 숫자 List   | 숫자. 텍스트                                 |
-| Italic Text | \*텍스트\* \_텍스트\_                        |
-| Bold Text   | \*\*텍스트\*\* \_\_텍스트\_\_                |
+| Italic Text | \*텍스트\* or \_텍스트\_                     |
+| Bold Text   | \*\*텍스트\*\* or \_\_텍스트\_\_             |
 | 인용        | \> 텍스트                                    |
 | 인라인 링크 | \[텍스트\]\(링크주소)                        |
 | 참조 링크   | \[텍스트\]\[참조명\] or \[참조명\]: 링크주소 |
@@ -50,7 +51,7 @@
    - vscode-pdf - tomoki1207
    - Markdown PDF - yzane
 
-## **Markdown HTML 변환하기**
+## **Markdown HTML 변환**
 
 - 방법1. NodeJS markdown-it Package로 변환하기
 

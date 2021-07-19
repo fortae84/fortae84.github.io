@@ -1,0 +1,206 @@
+<link rel="stylesheet" type="text/css" href="../style.css" />
+<h1><strong>Kubernetes 기본</strong></h1>
+<h3>추천 강좌</h3>
+<ul>
+<li>UDEMY: https://www.udemy.com/course/learn-kubernetes/</li>
+<li>UDEMY(CKAD): https://www.udemy.com/course/certified-kubernetes-application-developer/</li>
+<li>UDEMY(CKA): https://www.udemy.com/course/certified-kubernetes-administrator-with-practice-tests/</li>
+</ul>
+<h3>기본 정보</h3>
+<ul>
+<li>Certified Kubernetes Administrator: https://www.cncf.io/certification/cka/</li>
+<li>Exam Curriculum (Topics): https://github.com/cncf/curriculum</li>
+<li>Candidate Handbook: https://www.cncf.io/certification/candidate-handbook</li>
+<li>Exam Tips: http://training.linuxfoundation.org/go//Important-Tips-CKA-CKAD</li>
+<li>시험 할인코드: DEVOPS15</li>
+</ul>
+<h3>기본 명령어</h3>
+<ul>
+<li>
+<p>PODS</p>
+<p><img src="./pod/1.png" alt="이미지"></p>
+</li>
+</ul>
+<pre><code>kubectl get pod
+kubectl get pod -o wide
+kubectl describe pod '이름'
+kubectl run '이름' --image='이미지 이름'
+kubectl delete pod '이름'
+kubectl edit pod '이름'
+</code></pre>
+<ul>
+<li>
+<p>ReplicaSets</p>
+<p><img src="./replicaset/1.png" alt="이미지"></p>
+<p><img src="./replicaset/2.png" alt="이미지"></p>
+</li>
+</ul>
+<pre><code>kubectl get replicaset
+kubectl delete replicaset '이름'
+kebectl describe replicaset '이름'
+kubectl create -f 파일이름.yml
+kubectl replace -f 파일이름.yml
+kubectl scale --replicas=6 -f 파일이름.yml
+kubectl scale replicas=6 replicaset '이름'
+</code></pre>
+<ul>
+<li>
+<p>Deployment</p>
+<p><img src="./deployment/1.png" alt="이미지"></p>
+</li>
+</ul>
+<pre><code>kubectl create deployment --image='이미지 이름' '이름'
+kubectl get deployment
+kubectl delete deployment '이름'
+kubectl get all
+kubectl create deployment --image='이미지 이름' '이름' --dry-run=client -o yaml &gt; 파일이름.yml
+</code></pre>
+<ul>
+<li>namespace</li>
+</ul>
+<p><img src="./namespace/1.png" alt="이미지"></p>
+<p><img src="./namespace/2.png" alt="이미지"></p>
+<p><img src="./namespace/3.png" alt="이미지"></p>
+<pre><code>kubectl get pods --namespace=dev
+kubectl config set-context $(kubectl config current-context) --namespace=dev
+kubectl get pods --all-namespaces
+</code></pre>
+<br/>
+<br/>
+<h1>Ubuntu기반 Kubernetes Master &amp; Worker Node 구성</h1>
+<ul>
+<li>기본 패키지 설치: apt-get</li>
+</ul>
+<pre><code>apt update -y
+apt upgrade -y
+apt install net-tools -y
+apt install ntp -y
+</code></pre>
+<ul>
+<li>호스트명 변경 (sudo hostnamectl set-hostname 호스명)</li>
+</ul>
+<pre><code>sudo hostnamectl set-hostname ubuntu-ft-kmaster1
+sudo hostnamectl set-hostname ubuntu-ft-kworker1
+sudo hostnamectl set-hostname ubuntu-ft-kworker2
+
+#192.168.137.101
+#192.168.137.111
+#192.168.137.112
+</code></pre>
+<ul>
+<li>virtual box network 드라이브 설정</li>
+</ul>
+<pre><code>어뎁터 옵션 변견 -&gt; 이터넷 송성 -&gt; 공유 -&gt; 인터넷 연결 공유 -&gt; virtualbox host-only network 선택
+</code></pre>
+<ul>
+<li>/etc/netplan/*.yaml 수정</li>
+</ul>
+<pre><code>network:
+ethernets:
+enp0s3:
+dhcp4: false
+addresses: - 192.168.137.101/24
+gateway4: 192.168.137.1
+nameservers:
+addresses: [8.8.8.8, 8.8.4.4]
+
+version: 2
+
+netplan apply
+</code></pre>
+<ul>
+<li>Docker CE 설치</li>
+</ul>
+<pre><code>- apt가 HTTPS로 리포지터리를 사용하는 것을 허용하기 위한 패키지 설치
+sudo apt-get update &amp;&amp; sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common gnupg2
+
+
+- 도커 공식 GPG 키 추가:
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key --keyring /etc/apt/trusted.gpg.d/docker.gpg add -
+
+- 도커 apt 리포지터리 추가:
+sudo add-apt-repository \
+  &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) \
+  stable&quot;
+
+- 도커 CE설치
+sudo apt-get update &amp;&amp; sudo apt-get install -y containerd.io=1.2.13-2 docker-ce=5:19.03.11~3-0~ubuntu-$(lsb_release -cs) docker-ce-cli=5:19.03.11~3-0~ubuntu-$(lsb_release -cs)
+
+- /etc/docker 생성
+sudo mkdir /etc/docker
+
+- 도커 데몬 설정
+cat &lt;&lt;EOF | sudo tee /etc/docker/daemon.json
+{
+&quot;exec-opts&quot;: [&quot;native.cgroupdriver=systemd&quot;],
+&quot;log-driver&quot;: &quot;json-file&quot;,
+&quot;log-opts&quot;: {
+&quot;max-size&quot;: &quot;100m&quot;
+},
+&quot;storage-driver&quot;: &quot;overlay2&quot;
+}
+EOF
+
+- /etc/systemd/system/docker.service.d 생성
+sudo mkdir -p /etc/systemd/system/docker.service.d
+
+- 도커 재시작 &amp; 부팅시 실행 설정 (systemd)
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+sudo systemctl enable docker
+apt update -y
+apt upgrade -y
+</code></pre>
+<ul>
+<li>kube Master &amp; Woker 노드 설치</li>
+</ul>
+<pre><code>- Swap off
+sudo swapoff -a
+vi /etc/fstab # SWAP이 정의된 줄을 '#'으로 주석처리해준다.
+
+- kubeadm, kubelet, kubectl 을 설치
+sudo apt-get install -y apt-transport-https curl
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+cat &lt;&lt;EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list
+deb https://apt.kubernetes.io/ kubernetes-xenial main
+EOF
+sudo apt-get update
+sudo apt-get install -y kubelet kubeadm kubectl
+
+- 자동업데이트 방지
+sudo apt-mark hold kubelet kubeadm kubectl
+
+- 버전 확인
+kubeadm version
+kubelet --version
+kubectl version
+
+- Master Node 설정
+apt-get install bash-completion
+echo 'source &lt;(kubectl completion bash)' &gt;&gt;~/.bashrc
+kubectl completion bash &gt;/etc/bash_completion.d/kubectl
+echo 'alias k=kubectl' &gt;&gt;~/.bashrc
+echo 'complete -F \_\_start_kubectl k' &gt;&gt;~/.bashrc
+
+- sudo kubeadm init --apiserver-advertise-address (마스터 노드 접속 가능한 IP) --pod-network-cidr=(클러스터 내부적으로 사용할 네트워크 대역)
+sudo kubeadm init --apiserver-advertise-address 192.168.137.101 --pod-network-cidr=192.168.100.0/24
+
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/configㄷ턋
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+export KUBECONFIG=/etc/kubernetes/admin.conf
+
+- loop 주석처리
+kubectl edit cm coredns -n kube-system
+kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+
+- Slave Worker Node 설정
+kubeadm join 192.168.137.101:6443 --token j3p31i.g5hbuh0z8o2zvak5 \
+ --discovery-token-ca-cert-hash sha256:68de3248c5ae69cf4ffe85de32f296c74abcf47654fcbad2dce2e0bfcb193e05
+kubectl patch node ubuntu-ft-kworker1 -p '{&quot;spec&quot;:{&quot;podCIDR&quot;:&quot;192.168.100.0/24&quot;}}'
+
+- Master Node UI 설치
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.2.0/aio/deploy/recommended.yaml
+kubectl proxy --port=8001 --address=192.168.137.101 --accept-hosts='^\*$'
+</code></pre>

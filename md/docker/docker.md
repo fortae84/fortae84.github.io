@@ -26,20 +26,17 @@
 - 별도의 Private 도커 Image 저장소를 구축하여 직접 관리
 - "Docker Hub"를 사용할 경우 하나의 Image만 저장 가능하며, 추가 사용시 비용 발생
 
-### Private Docker Registry 구성 - Docker Image 활용
+### Private Docker Registry 구성 - Docker registry Image 활용
 
 ```
-    # 레지스트리 이미지 다운로드
+    # Docker Registry 이미지 다운로드
     docker pull registry:latest
 
-    # 레지스트리 이미지 다운로드 확인
-    docker images registry
-
-    # 레지스트리 실행
+    # Docker Registry 이미지 실행
     docker run --name local-registry \
         -d --restart=always \
         -p 5000:5000 \
-        -v /data/registry:/var/lib/registry/docker/registry/v2 \
+        -v c:/ftdata/sol-registry:/var/lib/registry/docker/registry/v2 \
         registry:latest
 
     # 로컬PC/Server에 저장되어 있는 이미지 자체 레지스트리로 이관
@@ -54,3 +51,23 @@
 ```
 
 ### Private Docker Registry 구성 - Nexus Oss 3 활용
+
+- Nexus 설치
+
+  - Nexus3 소프트웨어 설치 버전을 다운 받아서 구성: https://www.sonatype.com/products/repository-oss-download
+
+  - 공식 Docker 이미지 sonatype/nexus3 사용
+
+  ```
+    # Docker Nexus3 oss 이미지 다운로드
+    docker pull sonatype/nexus3:latest
+
+    # Docker Nexus3 oss 이미지 실행
+    docker run -d -p 8081:8081  \
+        --name nexus    \
+        -e NEXUS_CONTEXT=nexus  \
+        -v c:/some/dir/nexus-data:/nexus-data \
+        sonatype/nexus3
+  ```
+
+- Nexus3 Docker Repository 구성

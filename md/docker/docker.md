@@ -14,18 +14,42 @@
 
 ## Docker Image 관리
 
-- Docker 이미지는 Docker 레지스트리에서 공유 하거나, Hub을 통해 이미지를 받고 설치
+- Docker Image는 Docker 레지스트리에서 공유 하거나, Hub을 통해 Image를 받고 설치
 
 ### Public Docker Registry
 
 - Docker Hub: https://hub.docker.com
-- 공식 Docker 이미지 외 여러 개인이 작성한 Docker 이미지 저장소
+- 공식 Docker Image 외 여러 개인이 작성한 Docker Image 저장소
 
 ### Private Docker Registry
 
-- 별도의 Private 도커 이미지 저장소를 구축하여 직접 관리
-- "Docker Hub"를 사용할 경우 하나의 이미지만 저장 가능하며, 추가 사용시 비용 발생
-
-#### Private Docker Registry 구성 - Nexus Oss 3 활용
+- 별도의 Private 도커 Image 저장소를 구축하여 직접 관리
+- "Docker Hub"를 사용할 경우 하나의 Image만 저장 가능하며, 추가 사용시 비용 발생
 
 #### Private Docker Registry 구성 - Docker Image 활용
+
+```
+
+    # 레지스트리 이미지 다운로드
+    docker pull registry:latest
+
+    # 레지스트리 이미지 다운로드 확인
+    docker images registry
+
+    # 레지스트리 실행
+    docker run --name local-registry \
+        -d --restart=always \
+        -p 5000:5000 \
+        -v /data/registry:/var/lib/registry/docker/registry/v2 \
+        registry:latest
+
+    # 로컬PC/Server에 저장되어 있는 이미지 자체 레지스트리로 이관
+    docker tag "이미지 이름":"이미지 버전" localhost:5000/"이미지 이름"
+
+    # Image 레지스트리에 저장하기
+    docker push localhost:5000/"이미지 이름"
+
+
+```
+
+#### Private Docker Registry 구성 - Nexus Oss 3 활용

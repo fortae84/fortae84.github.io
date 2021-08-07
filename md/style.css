@@ -792,7 +792,7 @@ body code {
   padding: 0.2em 0.4em;
   margin: 0;
   font-size: 85%;
-  background-color: rgba(27, 31, 35, 0.05);
+  background-color: rgba(0, 0, 0, 0.836);
   border-radius: 3px;
 }
 
@@ -808,6 +808,7 @@ body pre > code {
   white-space: pre;
   background: transparent;
   border: 0;
+  color: #fff;
 }
 
 body .highlight {
@@ -825,7 +826,7 @@ body pre {
   overflow: auto;
   font-size: 85%;
   line-height: 1.45;
-  background-color: #f6f8fa;
+  background-color: #3a3a3a;
   border-radius: 3px;
 }
 

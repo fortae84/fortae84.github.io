@@ -26,10 +26,9 @@
 - 별도의 Private 도커 Image 저장소를 구축하여 직접 관리
 - "Docker Hub"를 사용할 경우 하나의 Image만 저장 가능하며, 추가 사용시 비용 발생
 
-#### Private Docker Registry 구성 - Docker Image 활용
+### Private Docker Registry 구성 - Docker Image 활용
 
 ```
-
     # 레지스트리 이미지 다운로드
     docker pull registry:latest
 
@@ -49,7 +48,9 @@
     # Image 레지스트리에 저장하기
     docker push localhost:5000/"이미지 이름"
 
+    # Web GUI기반 Docker Registry Dashboard 제공하나 비추천
+    # Docker image hyper/docker-registry-web 참조
 
 ```
 
-#### Private Docker Registry 구성 - Nexus Oss 3 활용
+### Private Docker Registry 구성 - Nexus Oss 3 활용

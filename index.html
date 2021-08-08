@@ -178,7 +178,6 @@
       }
 
       function loadPage(url) {
-        console.log(url);
         $("#contentDiv").empty();
         var iframeDvi =
           '<iframe src="' +
@@ -232,7 +231,23 @@
         {
           menuNm: "소프트웨어",
           menuUrl: "",
-          childList: [],
+          childList: [
+            {
+              menuNm: "Operating System",
+              menuUrl: "./md/os/index.html",
+              childList: [],
+            },
+            {
+              menuNm: "Middleware",
+              menuUrl: "./md/middleware/index.html",
+              childList: [],
+            },
+            {
+              menuNm: "Monitoring",
+              menuUrl: "./md/monitoring/index.html",
+              childList: [],
+            },
+          ],
         },
         {
           menuNm: "프로그래밍",

@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="kr">
   <head>
     <!-- Standard Meta -->
-    <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta
       name="viewport"
@@ -26,50 +25,157 @@
     <script src="resources/semantic/semantic.min.js"></script>
   </head>
   <body>
-    <div>
-      <!-- 상단 메뉴-->
-      <div class="ui vertical segment" style="padding: 0px">
-        <div class="ui secondary pointing menu">
-          <a class="active item" style="width: 170px"> Home </a>
-          <a class="item" style="width: 170px"> Infra </a>
-          <a class="item" style="width: 170px"> Middleware </a>
-          <a class="item" style="width: 170px"> Programming </a>
-        </div>
-      </div>
-      <div>
-        <span style="width: 600px !important">122</span>
-        <span>12244</span>
+    <div class="context">
+      <!-- 상단 메뉴 -->
+      <div id="topMenuDiv" class="ui top attached menu">
+        <a class="item">
+          <i class="sidebar icon"></i>
+        </a>
+        <a class="header item" style="width: 206px" href="/"> Home </a>
       </div>
 
-      <!-- 하단 내용-->
-      <div class="ui vertical segment" style="padding: 0px">
-        <div class="ui segment" style="width: 200px">
-          <div class="ui compact vertical segment" style="width: 170px">
-            <p></p>
+      <div class="ui bottom attached segment pushable">
+        <!-- Sidebar -->
+        <div
+          class="ui vertical left visible sidebar menu"
+          style="min-height: 800px"
+        >
+          <!-- 기타 -->
+
+          <div class="ui card userInfo">
+            <div class="image">
+              <img src="./resources/img/avatar.png" />
+            </div>
+            <div class="content">
+              <a class="header">
+                <a id="userEmail" style="float: right" href="">
+                  <i class="envelope icon"></i
+                ></a>
+              </a>
+              <div class="meta">
+                <span class="date"></span>
+              </div>
+              <div class="description"></div>
+            </div>
           </div>
-          <div class="ui compact vertical segment" style="width: 170px">
-            <div class="ui wide skyscraper test ad" data-text="광고"></div>
-          </div>
+
+          <!--
+          <a class="item">
+            <i class="calendar icon"></i>
+            History
+          </a>
+          -->
+
+          <!-- 광고 -->
+          <a class="item" style="padding: 0px; margin: 20px 0px 10px 0px">
+            <center>
+              <div class="ui half banner test ad" data-text="Half Banner"></div>
+              <br />
+              <div class="ui half banner test ad" data-text="Half Banner"></div>
+            </center>
+          </a>
         </div>
-        <div class="ui segment">
-          <p>234234</p>
-        </div>
+
+        <!-- 내용 -->
+        <div id="contentDiv" class="pusher" style="min-height: 800px"></div>
       </div>
     </div>
-    <!--
-    <div class="ui segment">
-      <div class="ui secondary pointing menu">
-        <a class="active item"> Home </a>
-        <a class="item"> Infra </a>
-        <a class="item"> Middleware </a>
-      </div>
-      
-      
-      <div class="ui sidebar " style="margin-top:100px;">
-        <div class="ui wide skyscraper test ad" data-text="Wide Skyscraper"></div>
-      </div>
 
-      <div class="ui container">
+    <script>
+      $(function () {
+        // Sidebar Event처리
+        $(".context .ui.sidebar").sidebar({
+          context: $(".context .bottom.segment"),
+          closable: false,
+          dimPage: false,
+        });
+        $(".context .ui.sidebar").sidebar("attach events", "i.sidebar");
+
+        initPage();
+      });
+
+      function initPage() {
+        // 사용자 기본 정보
+        $(".userInfo .header").text("세렌디피티");
+        $(".userInfo .date").text("Develop & Operate");
+        $(".userInfo .description").text("순간 순간을 즐겨봐 carpe diem");
+        $("#userEmail").prop("href", "mailto:fortae84@gmail.com");
+
+        // 상단 Menu 구성
+        for (var i = 0; i < menuList.length; i++) {
+          if (menuList[i].childList.length == 0) {
+            $("#topMenuDiv").append(
+              '<a class="item" style="width: 206px"> ' +
+                menuList[i].menuNm +
+                "</a>"
+            );
+          } else {
+            var menu =
+              '<div class="menuNo' +
+              i +
+              ' ui pointing dropdown link item" style="width: 206px">';
+            menu += '<span class="text">' + menuList[i].menuNm + "</span>";
+            menu += '<i class="dropdown icon"></i>';
+            menu += '<div class="menu">';
+            menu += '<div class="header">' + menuList[i].menuNm + "</div>";
+
+            for (var j = 0; j < menuList[i].childList.length; j++) {
+              console.log(menuList[i].childList[j].menuUrl);
+              menu +=
+                "<div onclick=\"loadPage('" +
+                menuList[i].childList[j].menuUrl +
+                '\');" class="item"> ' +
+                menuList[i].childList[j].menuNm +
+                "</div>";
+            }
+            menu += "</div>";
+            menu += "</div>";
+            $("#topMenuDiv").append(menu);
+            $(".menuNo" + i).dropdown();
+          }
+        }
+      }
+
+      function loadPage(url) {
+        $("#contentDiv").load(url);
+      }
+
+      var menuList = [
+        {
+          menuNm: "Infra",
+          menuUrl: "",
+          childList: [
+            {
+              menuNm: "Docker",
+              menuUrl: "https://fortae84.github.io//md/docker/index.html",
+            },
+            {
+              menuNm: "Kubernetes",
+              menuUrl: "https://fortae84.github.io//md/kubernetes/index.html",
+            },
+          ],
+        },
+        {
+          menuNm: "Middleware",
+          menuUrl: "",
+          childList: [],
+        },
+        {
+          menuNm: "Programming",
+          menuUrl: "",
+          childList: [],
+        },
+        {
+          menuNm: "Project",
+          menuUrl: "",
+          isChilde: "N",
+          childList: [],
+        },
+      ];
+    </script>
+
+    <!--
+            <div class="ui container">
         <p>
           <ul>
             <li><a href="./md/markdown/index.html">Markdown</a></li>

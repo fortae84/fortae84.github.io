@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="../style.css" />
 <div align="center">
-    <img src="./images/docker.png" width="200px" />
+    <img src="../../resources/img/docker/docker.png" width="200px" />
 </div>
 <h2><strong>Docker</strong></h2>
 <ul>
@@ -11,98 +11,5 @@
 <li><strong>Ship</strong>: Docker 이미지를 공유하는 기능</li>
 <li><strong>Run</strong>: Docker Container를 작동시키는 기능</li>
 </ul>
-</li>
-</ul>
-<h2>Docker Image 관리</h2>
-<ul>
-<li>Docker Image는 Docker 레지스트리에서 공유 하거나, Hub을 통해 Image를 받고 설치</li>
-</ul>
-<h3>Public Docker Registry</h3>
-<ul>
-<li>Docker Hub: https://hub.docker.com</li>
-<li>공식 Docker Image 외 여러 개인이 작성한 Docker Image 저장소</li>
-</ul>
-<h3>Private Docker Registry</h3>
-<ul>
-<li>별도의 Private 도커 Image 저장소를 구축하여 직접 관리</li>
-<li>Docker Hub를 사용할 경우 하나의 Image만 저장 가능하며, 추가 사용시 비용 발생</li>
-</ul>
-<h3>Private Docker Registry 구성 - Docker registry Image 활용</h3>
-<pre><code>    # Docker Registry 이미지 다운로드
-    docker pull registry:latest
-
-    # Docker Registry 이미지 실행
-    docker run --name local-registry \
-        -d --restart=always \
-        -p 5000:5000 \
-        -v c:/ftdata/sol-registry:/var/lib/registry/docker/registry/v2 \
-        registry:latest
-
-    # http 통신 가능하도록 특정 /etc/docker/daemon.json 파일 변경
-    {
-        &quot;insecure-registries&quot;:[&quot;localhost:5000&quot;]
-    }
-
-    # 로컬PC/Server에 저장되어 있는 이미지 자체 레지스트리로 이관
-    docker tag &quot;이미지 이름&quot;:&quot;이미지 버전&quot; localhost:5000/&quot;이미지 이름&quot;
-
-    # Image local 레지스트리에 저장하기
-    docker push localhost:5000/&quot;이미지 이름&quot;
-
-    # Web GUI기반 Docker Registry Dashboard 제공하나 비추천
-    # Docker image hyper/docker-registry-web 참조
-
-</code></pre>
-<h3>Private Docker Registry 구성 - Nexus oss 3 활용</h3>
-<ul>
-<li>
-<p>Nexus 설치</p>
-<ul>
-<li>
-<p>Nexus3 소프트웨어 설치 버전을 다운 받아서 구성: https://www.sonatype.com/products/repository-oss-download</p>
-</li>
-<li>
-<p>공식 Docker 이미지 sonatype/nexus3 사용</p>
-</li>
-</ul>
-<pre><code>  # Docker Nexus3 oss 이미지 다운로드
-  docker pull sonatype/nexus3:latest
-
-  # Docker Nexus3 oss 이미지 실행
-  docker run -d \
-      -p 8081:8081  \
-      -p 5000:5000  \
-      --name nexus    \
-      -e NEXUS_CONTEXT=nexus  \
-      -v c:/ftdata/sol-nexus-data:/nexus-data \
-      sonatype/nexus3
-</code></pre>
-</li>
-<li>
-<p>Nexus3 Docker Repository 구성</p>
-<ol>
-<li>Nexus3 oss 웹사이트 접속: http://localhost:8081/nexus</li>
-<li>Nexus3 oss 로그인
-<ul>
-<li>기본 계정은 admin 이며 비밀번호는 컨테이너안 /nexus-data/admin.password에 저장되어 있음</li>
-<li>docker exec -it nexus bin/sh | cat /nexus-data/admin.password</li>
-</ul>
-</li>
-<li>상단 톰니바쿼 아이콘(Server administration and configuration) 클릭 -&gt; Repository 클릭 -&gt; Create repository 클릭</li>
-<li>docker hosted 클릭 -&gt; Name에 repo 이름 지정한다</li>
-<li>Repository Connectors http 체크: docker전용 http포트 지정한다</li>
-<li>Enable Docker V1 API 체크: 기본은 Docker V2버전이며 V2는 https만 지원한다.</li>
-</ol>
-<pre><code>  # http 통신 가능하도록 특정 /etc/docker/daemon.json 파일 변경
-  {
-      &quot;insecure-registries&quot;:[&quot;localhost:5000&quot;]
-  }
-
-  # 로컬PC/Server에 저장되어 있는 이미지 자체 레지스트리로 이관
-  docker tag &quot;이미지 이름&quot;:&quot;이미지 버전&quot; localhost:5000/&quot;이미지 이름&quot;
-
-  # Image 레지스트리에 저장하기
-  docker push localhost:5000/&quot;이미지 이름&quot;
-</code></pre>
 </li>
 </ul>

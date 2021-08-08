@@ -105,9 +105,9 @@
         for (var i = 0; i < menuList.length; i++) {
           if (menuList[i].childList.length == 0) {
             $("#topMenuDiv").append(
-              '<a class="header item" style="width: 206px"> ' +
+              '<a class="header item" style="width: 206px"><div class="text">' +
                 menuList[i].menuNm +
-                "</a>"
+                "</div></a>"
             );
           } else {
             var menu =
@@ -120,7 +120,6 @@
             menu += '<div class="header">' + menuList[i].menuNm + "</div>";
             menu += '<div class="divider"></div>';
             for (var j = 0; j < menuList[i].childList.length; j++) {
-              console.log(menuList[i].childList[j].menuUrl);
               menu +=
                 "<div onclick=\"loadPage('" +
                 menuList[i].childList[j].menuUrl +
@@ -131,7 +130,9 @@
             menu += "</div>";
             menu += "</div>";
             $("#topMenuDiv").append(menu);
-            $(".menuNo" + i).dropdown();
+            $(".menuNo" + i).dropdown({
+              action: "hide",
+            });
           }
         }
       }
@@ -210,19 +211,5 @@
         },
       ];
     </script>
-
-    <!--
-            <div class="ui container">
-        <p>
-          <ul>
-            <li><a href="./md/markdown/index.html">Markdown</a></li>
-            <li><a href="./md/kubernetes/index.html">Kubernetes</a></li>
-            <li><a href="./md/docker/index.html">docker</a></li>
-            <li><a href="./md/flutter/index.html">flutter</a></li>
-          </ul>
-        </p>
-      </div>
-    </div>
-    -->
   </body>
 </html>

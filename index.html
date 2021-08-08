@@ -105,20 +105,20 @@
         for (var i = 0; i < menuList.length; i++) {
           if (menuList[i].childList.length == 0) {
             $("#topMenuDiv").append(
-              '<a class="item" style="width: 206px"> ' +
+              '<a class="header item" style="width: 206px"> ' +
                 menuList[i].menuNm +
                 "</a>"
             );
           } else {
             var menu =
-              '<div class="menuNo' +
+              '<div class="header menuNo' +
               i +
-              ' ui pointing dropdown link item" style="width: 206px">';
+              ' ui pointing dropdown link item" style="width: 206px;font-size:14px;">';
             menu += '<span class="text">' + menuList[i].menuNm + "</span>";
             menu += '<i class="dropdown icon"></i>';
             menu += '<div class="menu">';
             menu += '<div class="header">' + menuList[i].menuNm + "</div>";
-
+            menu += '<div class="divider"></div>';
             for (var j = 0; j < menuList[i].childList.length; j++) {
               console.log(menuList[i].childList[j].menuUrl);
               menu +=
@@ -137,9 +137,33 @@
       }
 
       function loadPage(url) {
-        $("#contentDiv").load(url);
+        $("#contentDiv").empty();
+        var iframeDvi =
+          '<iframe src="' +
+          url +
+          '" style="width:100%; height:' +
+          ($(window).height() - 50) +
+          'px; border:none"></iframe>';
+
+        $("#contentDiv").append(iframeDvi);
       }
 
+      /**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      **/
       var menuList = [
         {
           menuNm: "Infra",
@@ -147,11 +171,11 @@
           childList: [
             {
               menuNm: "Docker",
-              menuUrl: "https://fortae84.github.io//md/docker/index.html",
+              menuUrl: "./md/docker/index.html",
             },
             {
               menuNm: "Kubernetes",
-              menuUrl: "https://fortae84.github.io//md/kubernetes/index.html",
+              menuUrl: "./md/kubernetes/index.html",
             },
           ],
         },
@@ -163,12 +187,25 @@
         {
           menuNm: "Programming",
           menuUrl: "",
-          childList: [],
+          childList: [
+            {
+              menuNm: "Markdown",
+              menuUrl: "./md/markdown/index.html",
+            },
+            {
+              menuNm: "Flutter",
+              menuUrl: "./md/flutter/index.html",
+            },
+          ],
         },
         {
           menuNm: "Project",
           menuUrl: "",
-          isChilde: "N",
+          childList: [],
+        },
+        {
+          menuNm: "기타",
+          menuUrl: "",
           childList: [],
         },
       ];

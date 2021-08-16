@@ -2,7 +2,7 @@
 title: Text and Typography
 author: Cotes Chung
 date: 2019-08-08 11:33:00 +0800
-categories: [Blogging, Demo]
+categories: [ETC, Blogging]
 tags: [typography]
 math: true
 mermaid: true
@@ -14,17 +14,18 @@ image:
 
 This post is to show Markdown syntax rendering on [**Chirpy**](https://github.com/cotes2020/jekyll-theme-chirpy/fork), you can also use it as an example of writing. Now, let's start looking at text and typography.
 
-
 ## Titles
+
 ---
+
 # H1 - heading
 
 <h2 data-toc-skip>H2 - heading</h2>
 
 <h3 data-toc-skip>H3 - heading</h3>
 
-<h4>H4 - heading</h4>
----
+## <h4>H4 - heading</h4>
+
 <br>
 
 ## Paragraph
@@ -52,8 +53,8 @@ Fluttering and dancing in the breeze.
 ### Unordered list
 
 - Chapter
-	- Section
-      - Paragraph
+  - Section
+    - Paragraph
 
 ### Task list
 
@@ -72,7 +73,6 @@ Sun
 Moon
 : the natural satellite of the earth, visible by reflected light from the sun
 
-
 ## Block Quote
 
 > This line to shows the Block Quote.
@@ -80,20 +80,18 @@ Moon
 ## Tables
 
 | Company                      | Contact          | Country |
-|:-----------------------------|:-----------------|--------:|
+| :--------------------------- | :--------------- | ------: |
 | Alfreds Futterkiste          | Maria Anders     | Germany |
-| Island Trading               | Helen Bennett    | UK      |
-| Magazzini Alimentari Riuniti | Giovanni Rovelli | Italy   |
+| Island Trading               | Helen Bennett    |      UK |
+| Magazzini Alimentari Riuniti | Giovanni Rovelli |   Italy |
 
 ## Links
 
 <http://127.0.0.1:4000>
 
-
 ## Footnote
 
 Click the hook will locate the footnote[^footnote], and here is another footnote[^fn-nth-2].
-
 
 ## Images
 
@@ -141,22 +139,19 @@ _shadow effect (visible in light mode)_
   cherry :active, c, after b a, 1d
 ```
 
-
 ## Mathematics
 
 The mathematics powered by [**MathJax**](https://www.mathjax.org/):
 
-$$ \sum_{n=1}^\infty 1/n^2 = \frac{\pi^2}{6} $$
+$$ \sum\_{n=1}^\infty 1/n^2 = \frac{\pi^2}{6} $$
 
 When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are
 
 $$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
 
-
 ## Inline code
 
 This is an example of `Inline Code`.
-
 
 ## Code block
 
@@ -197,11 +192,13 @@ fi;
 #### Liquid
 
 {% raw %}
+
 ```liquid
 {% if product.title contains 'Pack' %}
   This product's title contains the word Pack.
 {% endif %}
 ```
+
 {% endraw %}
 
 #### Java

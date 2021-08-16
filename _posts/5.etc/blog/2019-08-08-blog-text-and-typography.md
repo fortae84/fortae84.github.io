@@ -1,5 +1,5 @@
 ---
-title: Blog 설정 - Text and Typography
+title: Blog - Text and Typography
 author: Cotes Chung
 date: 2019-08-08 11:33:00 +0800
 categories: [5.기타, Blogging]

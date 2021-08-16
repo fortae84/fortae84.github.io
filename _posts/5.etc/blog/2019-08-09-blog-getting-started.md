@@ -1,5 +1,5 @@
 ---
-title: Blog 설정 - Getting Started
+title: Blog - Getting Started
 author: Cotes Chung
 date: 2019-08-09 20:55:00 +0800
 categories: [5.기타, Blogging]

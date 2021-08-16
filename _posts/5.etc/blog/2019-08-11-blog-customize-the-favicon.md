@@ -1,5 +1,5 @@
 ---
-title: Blog 설정 - Customize the Favicon
+title: Blog - Customize the Favicon
 author: Cotes Chung
 date: 2019-08-11 00:34:00 +0800
 categories: [5.기타, Blogging]

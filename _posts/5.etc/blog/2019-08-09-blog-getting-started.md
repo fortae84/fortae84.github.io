@@ -4,7 +4,7 @@ author: Cotes Chung
 date: 2019-08-09 20:55:00 +0800
 categories: [5.기타, Blogging]
 tags: [getting started]
-pin: true
+#pin: true
 ---
 
 ## Prerequisites

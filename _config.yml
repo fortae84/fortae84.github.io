@@ -28,13 +28,13 @@ description: >-                        # used by seo meta and the atom feed
   and focuses on text presentation.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: 'https://fortae84.github.io'
+url: 'https://fortae84.github.io/ft_blog'
 
 github:
   username: fortae84             # change to your github username
 
-#twitter:
-#  username: twitter_username            # change to your twitter username
+twitter:
+  username: twitter_username            # change to your twitter username
 
 social:
   # Change to your full name.

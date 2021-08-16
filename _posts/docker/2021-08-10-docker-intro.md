@@ -2,7 +2,7 @@
 title: Docker
 author: Fortae
 date: 2021-08-10 18:32:00 -0500
-categories: [Infra, Docker]
+categories: [1.인프라, Docker]
 tags: [docker]
 ---
 

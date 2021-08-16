@@ -2,7 +2,7 @@
 title: Customize the Favicon
 author: Cotes Chung
 date: 2019-08-11 00:34:00 +0800
-categories: [ETC, Blogging]
+categories: [5.기타, Blogging]
 tags: [favicon]
 ---
 
@@ -25,12 +25,12 @@ Now, copy the remaining image files (`PNG` and `ICO`) to cover the original file
 
 The following table will helps you understand the changes to the favicon files:
 
-| File(s)             | From Online Tool                  | From Chirpy |
-|---------------------|:---------------------------------:|:-----------:|
-| `*.PNG`             | ✓                                 | ✗           |
-| `*.ICO`             | ✓                                 | ✗           |
-| `browserconfig.xml` | ✗                                 | ✓           |
-| `site.webmanifest`  | ✗                                 | ✓           |
+| File(s)             | From Online Tool | From Chirpy |
+| ------------------- | :--------------: | :---------: |
+| `*.PNG`             |        ✓         |      ✗      |
+| `*.ICO`             |        ✓         |      ✗      |
+| `browserconfig.xml` |        ✗         |      ✓      |
+| `site.webmanifest`  |        ✗         |      ✓      |
 
 > Note: ✓ means keep, ✗ means delete.
 

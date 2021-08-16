@@ -1,9 +1,9 @@
 ---
-title: Customize the Favicon
+title: Blog 설정 - Customize the Favicon
 author: Cotes Chung
 date: 2019-08-11 00:34:00 +0800
 categories: [5.기타, Blogging]
-tags: [favicon]
+tags: [blog]
 ---
 
 The [favicons](https://www.favicon-generator.org/about/) of [**Chirpy**](https://github.com/cotes2020/jekyll-theme-chirpy/) are placed in the directory `assets/img/favicons/`. You may need to replace them with your own. The following sections will guide you how to create and replace the default favicons.

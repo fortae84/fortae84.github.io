@@ -6,9 +6,6 @@ categories: [Infra, Docker]
 tags: [docker]
 ---
 
-
-<link rel="stylesheet" type="text/css" href="../style.css" />
-
 <div align="center">
     <img src="../../resources/img/docker/docker.png" width="200px" />
 </div>

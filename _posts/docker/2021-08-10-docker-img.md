@@ -7,8 +7,6 @@ tags: [docker]
 ---
 
 
-<link rel="stylesheet" type="text/css" href="../../style.css" />
-
 ## Docker Image 관리
 
 - Docker Image는 Docker 레지스트리에서 공유 하거나, Hub을 통해 Image를 받고 설치

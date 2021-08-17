@@ -9,6 +9,7 @@ tags: [infra, Linux. script]
 - daemon.sh 파일 생성하여 아래 내용을 복사
 - daemon.sh 파일에 실행 권한 부여 ex) chmod 770 daemon.sh
 - 스크립트 내용중 "check!!" 확인 및 어플리케이션 환경(linux 사용자 지정, 어플리케이션 이름)에 맞게 수정
+- 스크릅트 실행: "daemon.sh start" / "daemon.sh stop"
 
 ```
 #!/bin/bash
@@ -25,8 +26,8 @@ APP_NM="app_java1"
 # check!! 해당 스크립트를 기동할 사용자 지정
 APP_USER="root"
 
-# 기타 JAVA 추가 실행 명령어
-# APP_SCRIPT="-jar agent.jar -jnlpUrl http://172.30.0.3:8081/jenkins/computer/ftapp/slave-agent.jnlp -secret @secret-file -workDir /sw/sol/jenkins"
+# check!! 기타 JAVA 추가 실행 명령어
+APP_SCRIPT="-jar agent.jar"
 
 if [ $CURRENT_USER = $APP_USER ]
 then

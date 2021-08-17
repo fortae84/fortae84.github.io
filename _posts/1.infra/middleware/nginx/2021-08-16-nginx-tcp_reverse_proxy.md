@@ -8,7 +8,7 @@ tags: [infra, middleware, Nginx]
 
 - Nginx 1.9.0부터 ngx_stream_core_module 지원
 - ngx_stream_core_module을 사용, TCP/UDP Reverse Proxy 구성 가능
-- Nginx는 윈도우 / Linux 모두 지원
+- 윈도우 / Linux 모두 지원
 
 ```
 - TCP/UDP Reverse Proxy 구성 nginx.conf 예시

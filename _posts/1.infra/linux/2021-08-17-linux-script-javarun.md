@@ -8,7 +8,7 @@ tags: [infra, Linux. script]
 
 - daemon.sh 파일 생성하여 아래 내용을 복사
 - daemon.sh 파일에 실행 권한 부여 ex) chmod 770 daemon.sh
-- 스크립트 내용중 "check!!" 확인 및 어플리케이션 환경(linux 사용자 지정, 어플리케이션 이름)에 맞게 수정
+- 주석 "check!!" 부분 어플리케이션 환경(linux 사용자 지정, 어플리케이션 이름)에 맞게 수정
 - 스크릅트 실행: "daemon.sh start" / "daemon.sh stop"
 
 ```

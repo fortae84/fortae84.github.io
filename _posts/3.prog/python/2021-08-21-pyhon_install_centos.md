@@ -75,6 +75,11 @@ source /root/.bashrc
 
 -- 파이썬 버전 확인
 phyhon -V
+
+-- python3 설치 다운 폴더로 이동 압축파일 설치폴더 삭제
+rm -f Python-3.9.6.tgz
+rm -Rf Python-3.9.6/
+
 ```
 
 

@@ -2,7 +2,7 @@
 title: Blog - Writing a New Post
 author: Cotes Chung
 date: 2019-08-08 14:10:00 +0800
-categories: [5.기타, Blogging]
+categories: [5.ETC, Blogging]
 tags: [blog]
 ---
 

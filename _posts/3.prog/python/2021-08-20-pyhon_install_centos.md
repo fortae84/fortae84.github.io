@@ -2,7 +2,7 @@
 title: Python3 Centos 설치
 author: Fortae
 date: 2021-08-20 00:00:00 -0500
-categories: [3.프로그래밍, Python]
+categories: [3.Programming, Python]
 tags: [programming, Python, backend]
 ---
 

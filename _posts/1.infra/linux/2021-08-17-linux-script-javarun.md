@@ -2,7 +2,7 @@
 title: Linux/Script - Java 어플리케이션 Bash 실행 스크립트 작성
 author: Fortae
 date: 2021-08-17 09:32:00
-categories: [1.인프라, Linux]
+categories: [1.Infra, Linux]
 tags: [infra, Linux, script]
 ---
 

@@ -1,9 +1,9 @@
 ---
-title: Linux/Script - 리눅스 시스템 로그
+title: Linux/System- 리눅스 시스템 로그
 author: Fortae
 date: 2021-08-20 00:00:00
 categories: [1.Infra, Linux]
-tags: [infra, Linux, system]
+tags: [infra, linux, system]
 ---
 
 - 리눅스 관련 로그 저장 경로 : /var/log

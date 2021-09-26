@@ -3,7 +3,7 @@ title: Linux/Script - Java 어플리케이션 Bash 실행 스크립트 작성
 author: Fortae
 date: 2021-08-17 09:32:00
 categories: [1.Infra, Linux]
-tags: [infra, Linux, script]
+tags: [infra, linux, script]
 ---
 
 - daemon.sh 파일 생성하여 아래 내용을 복사

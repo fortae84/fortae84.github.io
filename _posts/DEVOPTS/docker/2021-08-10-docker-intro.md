@@ -2,7 +2,7 @@
 title: Docker - 소개
 author: Fortae
 date: 2021-08-10 18:32:00 -0500
-categories: [1.Infra, Docker]
+categories: [DEVOPTS, KUBERNETES, DOCKER]
 tags: [docker]
 ---
 

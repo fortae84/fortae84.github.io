@@ -2,7 +2,7 @@
 title: Blog - Getting Started
 author: Cotes Chung
 date: 2019-08-09 20:55:00 +0800
-categories: [5.ETC, Blogging]
+categories: [ETC, Blogging]
 tags: [blog]
 #pin: true
 ---

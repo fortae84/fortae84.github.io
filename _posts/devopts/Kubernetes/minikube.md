@@ -1,0 +1,59 @@
+---
+title: Minikube
+author: Fortae
+date: 2022-10-08 00:32:00 -0500
+categories: [DEVOPTS, KUBERNETES, MINIKUBE]
+tags: [kubernetes, minikube]
+---
+
+## MINIKUBE 미니큐브
+
+공식 문서: https://minikube.sigs.k8s.io/docs/start/
+
+### MAC 설치
+```bash
+# Docker 설치
+brew install docker
+brew install docker-compose
+brew install docker-credential-helper
+
+# Minikube 설치
+brew install minikube
+```
+
+### 주요 명령어
+```bash
+
+# minikube 실행
+minikube start --driver=virtualbox
+
+# minikube 종료
+minikube stop
+
+# minikube addon private registry 자동 설치
+minikube addons enable registry
+
+# minikube addon 조회
+minikube addons list
+
+# host PC/서버 disk minikube mount (백그라운드로 실행 필요)
+minikube mount $HOME:/host &
+
+# minikube 네트워크 외부 노출 (백그라운드 실행 필요)
+minikube tunnel &
+
+# minkube 컨솔 접속
+minikube ssh			
+
+# 참고
+minikube config set memory 10240
+minikube config set cpus 4
+minikube config set disk-size 40000mb
+minikube config set driver virtualbox
+minikube pause			# 클러스터 일시정지
+minikube unpause		# 클러스터 재개
+minikube start			# 클러스터 시작
+minikube delete			# 클러스터 삭제
+
+```
+

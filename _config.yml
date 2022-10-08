@@ -1,58 +1,25 @@
-# The Site Configuration
-
-# Import the theme
 theme: jekyll-theme-chirpy
-
-# Only if your site type is GitHub Project sites and doesn't have a custom domain,
-# change below value to '/projectname'.
-# baseurl: '/ft_blog'
-
-# The language of the webpage › http://www.lingoes.net/en/translator/langcode.htm
-# If it has the same name as one of the files in folder `_data/locales`, the layout language will also be changed,
-# otherwise, the layout language will use the default value of 'en'.
 lang: ko-KR
-
-# Change to your timezone › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
 timezone: Asia/Seoul
 
-# jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
-# ↓ --------------------------
-
 title: 세렌디피티 IT공장 # the main title
-
-tagline: Develop & Operate # it will display as the sub-title
-
+tagline: DEVOPTS
 description: >- # used by seo meta and the atom feed
   A minimal, portfolio, sidebar,
   bootstrap Jekyll theme with responsive web design
   and focuses on text presentation.
 
-# fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: "https://fortae84.github.io"
-
 github:
   username: fortae84 # change to your github username
 
-#twitter:
-#  username: twitter_username            # change to your twitter username
-
 social:
-  # Change to your full name.
-  # It will be displayed as the default author of the posts and the copyright owner in the Footer
   name: fortae
   email: fortae84@gmail.com # change to your email address
   links:
-    # The first element serves as the copyright owner's link
-    #- https://twitter.com/username      # change to your twitter homepage
     - https://github.com/fortae84 # change to your github homepage
-    # Uncomment below to add more social links
-    # - https://www.facebook.com/username
-    # - https://www.linkedin.com/in/username
 
 google_site_verification: google_meta_tag_verification # change to your verification string
-
-# ↑ --------------------------
-
 google_analytics:
   id: "" # fill in your Google Analytics ID
   # Google Analytics pageviews report settings
@@ -71,7 +38,7 @@ google_analytics:
 #     light  - Use the light color scheme
 #     dark   - Use the dark color scheme
 #
-theme_mode: dark # [light|dark]
+theme_mode: light # [light|dark]
 
 # The CDN endpoint for images.
 # Notice that once it is assigned, the CDN url

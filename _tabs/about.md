@@ -19,6 +19,8 @@ order: 4
 ### DEVOPTS
 ```
 - Linux Debian-based
+- Nginx
+- Haproxy
 - Docker
 - Kubernetes
 - Scouter APM

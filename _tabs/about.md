@@ -5,4 +5,24 @@ order: 4
 ---
 
 
-> **Note**: Add Markdown syntax content to file `_tabs/about.md` and it will show up on this page.
+## 주요 관심사
+
+
+### FrontEnd Framework
+```
+- Flutter
+```
+
+### BackEnd Framework
+```
+- OpenJDK 1.11
+- Spring boot
+- Spring Cloud
+```
+
+### DEVOPTS
+```
+- Kubernetes
+- Docker
+- Scouter APM
+```

@@ -17,7 +17,6 @@ tags: [kubernetes, cka, ckad, cks]
   - 쿠버네티스 업그레이드
   - 트러블 슈팅
     ```
-    - 서비스에 잘못 지정된 라벨
     - 서비스 "name", "target와 port 불일치"
     - env, configmap 불일치
     - /etc/kubernetes/manifests static pod 설정 오류

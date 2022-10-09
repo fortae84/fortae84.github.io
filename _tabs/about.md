@@ -18,7 +18,8 @@ order: 4
 
 ### DEVOPTS
 ```
-- Kubernetes
+- Linux Debian-based
 - Docker
+- Kubernetes
 - Scouter APM
 ```

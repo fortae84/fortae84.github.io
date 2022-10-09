@@ -4,10 +4,6 @@ icon: fas fa-info
 order: 4
 ---
 
-
-## 주요 관심사
-
-
 ### FrontEnd Framework
 ```
 - Flutter

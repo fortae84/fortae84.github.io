@@ -6,8 +6,6 @@ categories: [DEVOPTS, KUBERNETES]
 tags: [kubernetes, cka, ckad, cks]
 ---
 
-## 쿠버네티스
-
 ### CKA 자격증
 - 추천 강의
   - https://www.udemy.com/course/certified-kubernetes-administrator-with-practice-tests/ (UDEMY)
@@ -18,7 +16,7 @@ tags: [kubernetes, cka, ckad, cks]
     - 업그레이드 순서: kubeadm upgrade -> kubeadm 계획 수립 -> kubelet upgrade
     - master node 부터 worker node로 순차적으로 적용
       
-    ``` yaml
+    ``` bash
       # kubeadm update 수행
       apt-get update
       apt-cache madison kubeadm
@@ -45,13 +43,13 @@ tags: [kubernetes, cka, ckad, cks]
   - 쿠버네티스 Cluster 구성
   - ETCD 백업 하기
   - Static pod/etcd-controlplane 내용 참조, 파일: "/etc/kubernetes/manifests/etcd.yaml"
-- ```yaml
-    ETCDCTL_API=3 etcdctl \
-      --endpoints=https://127.0.0.1:2379 \ 
-      --cacert=/etc/kubernetes/pki/etcd/ca.crt \ 
-      --cert=/etc/kubernetes/pki/etcd/server.crt \ 
-      --key=/etc/kubernetes/pki/etcd/server.key snapshot save /opt/etcd-backup.db
-  ```
+    ``` bash
+      ETCDCTL_API=3 etcdctl \
+        --endpoints=https://127.0.0.1:2379 \ 
+        --cacert=/etc/kubernetes/pki/etcd/ca.crt \ 
+        --cert=/etc/kubernetes/pki/etcd/server.crt \ 
+        --key=/etc/kubernetes/pki/etcd/server.key snapshot save /opt/etcd-backup.db
+    ```
 
   - 트러블 슈팅
     ```

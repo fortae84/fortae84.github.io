@@ -4,24 +4,26 @@ icon: fas fa-info
 order: 4
 ---
 
-### FrontEnd Framework
-```
-- Flutter
-```
+## 주요 기술 스텍
 
-### BackEnd Framework
-```
-- OpenJDK 1.11
-- Spring boot
-- Spring Cloud
-```
+- ### FrontEnd Framework
+    ```
+    - Flutter
+    ```
 
-### DEVOPTS
-```
-- Linux Debian-based
-- Nginx
-- Haproxy
-- Docker
-- Kubernetes
-- Scouter APM
-```
+- ### BackEnd Framework
+    ```
+    - OpenJDK 1.11
+    - Spring boot
+    - Spring Cloud
+    ```
+
+- ### DEVOPTS
+    ```
+    - Linux Debian-based
+    - Nginx
+    - Haproxy
+    - Docker
+    - Kubernetes
+    - Scouter APM
+    ```

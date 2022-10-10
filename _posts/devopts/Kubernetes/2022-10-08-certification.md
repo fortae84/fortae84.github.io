@@ -52,7 +52,7 @@ tags: [kubernetes, cka, ckad, cks]
     ```
 
   - 트러블 슈팅
-    ```
+    ``` text
     - 서비스 "name", "target와 port 불일치"
     - env, configmap 불일치
     - /etc/kubernetes/manifests static pod 설정 오류

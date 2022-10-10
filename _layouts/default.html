@@ -47,5 +47,25 @@ mode="{{ site.theme_mode }}" {% endif %} {% endcapture %}
     {% include search-loader.html %} {% include js-selector.html %}
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1480551224756200" crossorigin="anonymous"></script>
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-app.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyCwj5cz5SdR3VocF29CwW2Glnf5PmK1d8M",
+        authDomain: "ft-web-blog.firebaseapp.com",
+        projectId: "ft-web-blog",
+        storageBucket: "ft-web-blog.appspot.com",
+        messagingSenderId: "198111263802",
+        appId: "1:198111263802:web:55af111ab757e27d82c903"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+    </script>
   </body>
 </html>

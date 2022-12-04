@@ -2,7 +2,7 @@
 title: Linux/System- 리눅스 시스템 로그
 author: Fortae
 date: 2021-08-20 00:00:00
-categories: [1.Infra, Linux]
+categories: [DEVOPTS, Linux]
 tags: [infra, linux, system]
 ---
 

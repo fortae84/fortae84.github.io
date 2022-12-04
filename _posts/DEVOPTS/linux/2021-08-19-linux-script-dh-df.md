@@ -2,7 +2,7 @@
 title: Linux/Script - 디스크 및 폴더 용량 확인 방법
 author: Fortae
 date: 2021-08-19 00:30:00
-categories: [1.Infra, Linux]
+categories: [DEVOPTS, Linux]
 tags: [infra, linux, script]
 ---
 

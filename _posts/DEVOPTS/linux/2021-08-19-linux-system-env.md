@@ -2,7 +2,7 @@
 title: Linux/System - Linux OS 환경 정보
 author: Fortae
 date: 2021-08-21 00:00:00
-categories: [1.Infra, Linux]
+categories: [DEVOPTS, Linux]
 tags: [infra, linux, system]
 ---
 

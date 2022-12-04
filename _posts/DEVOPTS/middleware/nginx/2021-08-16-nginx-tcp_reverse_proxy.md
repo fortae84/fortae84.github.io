@@ -2,7 +2,7 @@
 title: Nginx - TCP/UDP Reverse Proxy 구성
 author: Fortae
 date: 2021-08-16 00:32:00 -0500
-categories: [1.Infra, Nginx]
+categories: [DEVOPTS, Nginx]
 tags: [infra, middleware, Nginx]
 ---
 

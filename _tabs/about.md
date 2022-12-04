@@ -7,24 +7,30 @@ order: 4
 ## 주요 기술 스텍
 
 - ### FrontEnd Framework
-```
-- Flutter
-```
+    
+    ```text
+    - Flutter
+
+    ```
 
 - ### BackEnd Framework
-```
-- OpenJDK 1.11
-- Spring boot
-- Spring Cloud
-```
+
+    ```text
+    - OpenJDK 1.11
+    - Spring boot
+    - Spring Cloud
+
+    ```
 
 - ### DEVOPTS
-```
-- Linux Debian-based
-- Nginx
-- Haproxy
-- Docker
-- Kubernetes
-- Scouter APM
-- Pinpoint APM
-```
+
+    ```text
+    - Linux Debian-based
+    - Nginx
+    - Haproxy
+    - Docker
+    - Kubernetes
+    - Scouter APM
+    - Pinpoint APM
+
+    ```

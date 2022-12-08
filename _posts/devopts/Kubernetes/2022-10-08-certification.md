@@ -2,7 +2,7 @@
 title: Kubernetes - CKA, CKAD, CKS certification
 author: Fortae
 date: 2022-10-08 00:32:00 -0500
-categories: [DEVOPTS, KUBERNETES]
+categories: [DEVOPTS, Kubernetes]
 tags: [kubernetes, cka, ckad, cks]
 ---
 
